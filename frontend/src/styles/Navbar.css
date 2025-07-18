@@ -1,0 +1,47 @@
+:root {
+  --color-primary: #00A8E8;       /* azul celeste */
+  --color-primary-dark: #003B73;  /* azul oscuro */
+  --color-white: #FFFFFF;
+}
+
+.navbar {
+  background: var(--color-primary);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  color: var(--color-white);
+}
+
+.nav-links a {
+  color: var(--color-white);
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary-dark);
+}
+.nav-links a.active {
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-white);
+}
+
+.btn-logout {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.btn-logout:hover {
+  color: #ff4d4f;
+}

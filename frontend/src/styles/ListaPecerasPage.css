@@ -1,0 +1,242 @@
+
+:root {
+  --primary-dark: #003B73;
+  --primary: #00A8E8;
+  --accent: #44E0D0;
+  --light: #ffffff;
+  --background-light: #e0e0e0;
+
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+}
+
+/* =============================== */
+/* CONTENEDOR PRINCIPAL            */
+/* =============================== */
+.lista-peceras-container {
+  background-color: var(--background-light);
+  min-height: 100vh;
+  padding: 70px 40px;
+  font-family: Arial, sans-serif;
+  color: var(--text-dark);
+}
+
+/* =============================== */
+/* TÍTULO Y BOTÓN SUPERIOR         */
+/* =============================== */
+.titulo-con-boton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.titulo-con-boton h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--primary-dark);
+}
+
+.btn-agregar-top {
+  background-color: var(--primary-dark);
+  color: var(--light);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-agregar-top:hover {
+  background-color: var(--accent);
+}
+
+/* =============================== */
+/* TABLA DE PECERAS                */
+/* =============================== */
+.tabla-peceras {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.tabla-peceras thead tr {
+  background-color: var(--primary);
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.tabla-peceras th,
+.tabla-peceras td {
+  padding: 14px 18px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabla-peceras tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* =============================== */
+/* BOTONES DE ACCIÓN EN TABLA     */
+/* =============================== */
+.tabla-peceras button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+  color: var(--light);
+}
+
+.tabla-peceras button:hover {
+  opacity: 0.85;
+}
+
+.btn-editar {
+  background-color: #28a745; /* Verde */
+}
+
+.btn-editar:hover {
+  background-color: #218838;
+}
+
+.btn-eliminar {
+  background-color: #dc3545; /* Rojo */
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+}
+
+/* =============================== */
+/* MODAL FORMULARIO                */
+/* =============================== */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-popup {
+  background-color: var(--light);
+  padding: 30px 32px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* Título del formulario */
+.form-popup h3 {
+  margin-bottom: 20px;
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =============================== */
+/* INPUTS CON ICONOS               */
+/* =============================== */
+.form-popup label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.form-popup label input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1.8px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.form-popup label input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* =============================== */
+/* BOTONES DE FORMULARIO           */
+/* =============================== */
+.botones-formulario {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.botones-formulario button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  flex: 1;
+  margin: 0 6px;
+  color: var(--light);
+}
+
+/* Botón guardar */
+.botones-formulario button:first-child {
+  background-color: var(--primary-dark);
+}
+
+.botones-formulario button:first-child:hover {
+  background-color: var(--accent);
+}
+
+/* Botón cancelar */
+.botones-formulario button:last-child {
+  background-color: #dc3545;;
+}
+
+.botones-formulario button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* =============================== */
+/* CENTRAR FORMULARIO DE EDITAR    */
+/* =============================== */
+.form-editar .botones-formulario {
+  justify-content: center !important;
+}
+
+/* =============================== */
+/* CENTRAR FORMULARIO DE AGREGAR   */
+/* =============================== */
+.form-agregar .botones-formulario {
+  justify-content: center;
+}
+
+.form-agregar .botones-formulario button {
+  padding: 14px 24px;
+  font-size: 17px;
+}

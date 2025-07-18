@@ -1,0 +1,173 @@
+/* ============================= */
+/* VARIABLES GLOBALES           */
+/* ============================= */
+:root {
+  --color-bg: #E0E0E0;               /* Fondo gris claro */
+  --color-text: #003B73;             /* Texto azul oscuro */
+  --color-primary: #00A8E8;          /* Azul celeste */
+  --color-primary-dark: #003B73;     /* Azul oscuro */
+  --color-accent: #44E0D0;           /* Turquesa claro */
+  --color-btn-text: #000000;         /* Texto negro para botones */
+  --color-white: #FFFFFF;            /* Blanco */
+  --color-gray-light: #ccc;          /* Gris claro para iconos */
+  --color-gray-dark: #333;           /* Gris oscuro */
+  --color-black-dark: #111;          /* Negro muy oscuro */
+  --color-btn-flotante-bg: #44E0D0;  /* Fondo botón flotante */
+  --color-btn-flotante-hover: #39c9bb; /* Hover botón flotante */
+}
+
+/* ============================= */
+/* CONTENEDOR PRINCIPAL         */
+/* ============================= */
+.informes-container {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* ============================= */
+/* ENCABEZADO                   */
+/* ============================= */
+.informes-header {
+  padding: 50px;
+}
+
+/* ============================= */
+/* BARRA SUPERIOR DE FILTROS    */
+/* ============================= */
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-primary);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 0;
+}
+
+.barra-superior input,
+.barra-superior select {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+.barra-superior input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.barra-superior select {
+  background: var(--color-white);
+  cursor: pointer;
+  color: var(--color-primary-dark);
+}
+
+/* ============================= */
+/* BOTÓN AGREGAR                */
+/* ============================= */
+.btn-agregar {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background: var(--color-accent);
+}
+
+/* ============================= */
+/* LISTADO DE INFORMES          */
+/* ============================= */
+.lista-informes {
+  padding: 10px 20px;
+}
+
+.item-informe {
+  background: var(--color-black-dark);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-gray-dark);
+  text-decoration: none;
+}
+
+.item-informe img {
+  width: 50px;
+  height: 50px;
+}
+
+.item-informe .flecha {
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--color-gray-light);
+}
+
+/* ============================= */
+/* BOTÓN FLOTANTE (AGREGAR)     */
+/* ============================= */
+.btn-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: var(--color-btn-flotante-bg);
+  color: var(--color-text);
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(68, 224, 208, 0.4);
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-flotante:hover {
+  background-color: var(--color-btn-flotante-hover);
+}
+
+/* ============================= */
+/* PAGINACIÓN                   */
+/* ============================= */
+.paginacion {
+  text-align: center;
+  margin-top: 15px;
+  padding-bottom: 70px;
+}
+
+.paginacion button {
+  margin: 0 10px;
+  padding: 8px 12px;
+  background: var(--color-primary);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paginacion button:hover {
+  background: var(--color-accent);
+}
+
+.paginacion span {
+  font-weight: bold;
+  color: var(--color-gray-light);
+}

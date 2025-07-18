@@ -1,0 +1,193 @@
+.dashboard-container {
+  background-color: #E0E0E0;
+  color: #003B73;
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  padding: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #FFFFFF;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+th {
+  background-color: #00212e;
+  color: #FFFFFF;
+}
+
+thead tr th {
+  background-color: #00A8E8;
+  color: #FFFFFF;
+}
+
+.estado-normal {
+  color: green;
+  font-weight: bold;
+}
+
+.estado-alerta {
+  color: red;
+  font-weight: bold;
+}
+
+/* Botón flotante */
+.btn-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #00A8E8;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 12px black;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.btn-flotante:hover {
+  background-color: #44E0D0;
+}
+
+/* Modal emergente */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.form-popup {
+  background: #003B73;
+  padding: 20px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px #003B73;
+}
+
+.form-popup input,
+.form-popup select {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background: #003B73;
+  color: white;
+}
+.form-popup input::placeholder,
+.form-popup select::placeholder {
+  color: #CCCCCC;
+}   
+.form-popup button {
+  background: #00A8E8;
+  color: black;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-popup button:hover {
+  background: #44E0D0;
+}
+.form-popup .cerrar-btn {
+  background: #C0392B;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.form-popup .cerrar-btn:hover {
+  background: #c0392b;
+}
+.form-popup .cerrar-btn {
+  background: #C0392B;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.form-popup .cerrar-btn:hover {
+  background: #c0392b;
+}
+.form-popup label {
+  color: #FFFFFF;
+  margin-top: 10px;
+  display: block;
+}
+.form-popup select {
+  background: #003B73;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-popup select option {
+  background: #003B73;
+  color: white;
+}
+.form-popup select option:hover {
+  background: #44E0D0;
+}
+.form-popup input,
+.form-popup select {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background: #003B73;
+  color: white;
+}
+.form-popup input::placeholder {
+  color: #CCCCCC;
+}
+.form-popup select {
+  background: #003B73;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-popup select option {
+  background: #003B73;
+  color: white;
+}
+.form-popup select option:hover {
+  background: #44E0D0;
+}
+

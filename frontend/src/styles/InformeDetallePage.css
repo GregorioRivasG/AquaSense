@@ -1,0 +1,53 @@
+:root {
+  --color-bg: #E0E0E0;           /* fondo gris claro */
+  --color-text: #003B73;         /* texto azul oscuro para mejor contraste */
+  --color-box-bg: #FFFFFF;       /* caja blanca para destacar sobre fondo gris */
+  --color-shadow: #00A8E866;     /* sombra azul celeste con transparencia */
+  --color-btn-bg: #00A8E8;       /* botón azul celeste */
+  --color-btn-text: #000000;     /* texto negro en botones */
+  --color-btn-hover-bg: #44E0D0; /* turquesa para hover */
+}
+
+.detalle-informe-container {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.detalle-box {
+  background: var(--color-box-bg);
+  padding: 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--color-shadow);
+  color: var(--color-text);
+}
+
+.detalle-box img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.botones button {
+  padding: 10px;
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botones button:hover {
+  background: var(--color-btn-hover-bg);
+}

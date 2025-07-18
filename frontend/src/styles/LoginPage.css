@@ -1,0 +1,152 @@
+:root {
+  --color-bg-dark:  hsl(209, 100%, 23%);
+  --color-box-bg: rgba(255, 255, 255, 0.9);
+  --color-primary: #00A8E8;
+  --color-input-bg: #fff;
+  --color-input-text: #003B73;
+  --color-input-border: #ccc;
+  --color-input-border-focus: var(--color-primary);
+  --color-btn-bg: var(--color-primary);
+  --color-btn-text: #fff;
+  --color-title: var(--color-primary);
+  --color-box-shadow: rgba(0, 168, 232, 0.3);
+  --color-btn-bg-hover: #008fcc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  background-color: var(--color-bg-dark);
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Imagen de fondo marina */
+  background-image: url('https://wallpapers.com/images/hd/fish-tank-background-48chqpdq3wra94tf.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Capa oscura para mejorar contraste */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 40, 70, 0.6);
+  z-index: 0;
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  background: var(--color-box-bg);
+  padding: 40px 30px 30px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--color-box-shadow);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+.login-box h2 {
+  color: var(--color-title);
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+/* Estilos para inputs + iconos */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--color-input-border);
+  font-size: 1.2rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* espacio para el icono a la izquierda */
+  border: 1.8px solid var(--color-input-border);
+  border-radius: 8px;
+  background: var(--color-input-bg);
+  color: var(--color-input-text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+.input-group input:focus {
+  border-color: var(--color-input-border-focus);
+  box-shadow: 0 0 8px var(--color-input-border-focus);
+}
+
+.input-group input:focus + .icon,
+.input-group input:not(:placeholder-shown) + .icon {
+  color: var(--color-input-border-focus);
+}
+
+.login-box button {
+  padding: 12px;
+  background-color: var(--color-btn-bg);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-btn-text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 168, 232, 0.4);
+}
+
+.login-box button:hover {
+  background-color: var(--color-btn-bg-hover);
+  box-shadow: 0 6px 16px rgba(0, 143, 204, 0.7);
+}
+
+/* Responsive para móviles pequeños */
+@media (max-width: 400px) {
+  .login-box {
+    padding: 30px 20px 20px 20px;
+    width: 100%;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-box button {
+    font-size: 1rem;
+  }
+}

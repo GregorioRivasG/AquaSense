@@ -1,0 +1,75 @@
+.alerta-detalle-container {
+  background-color: #E0E0E0;
+  color: #003B73;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.alerta-box {
+  display: flex;
+  background: #003B73;
+  padding: 30px;
+  margin: 30px auto;
+  width: 85%;
+  border-radius: 12px;
+  gap: 20px;
+  box-shadow: 0 0 12px rgba(0, 168, 232, 0.3);
+  color: #FFFFFF;
+}
+
+.alerta-box img {
+  width: 100px;
+  height: 100px;
+}
+
+.alerta-info {
+  flex: 1;
+}
+
+.alerta-info h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+
+.alerta-info .sub {
+  color: #CCCCCC;
+  margin-bottom: 10px;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.botones button {
+  background: #00A8E8;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.botones button:hover {
+  background: #44E0D0;
+}
+
+.botones .clara {
+  background: orange;
+  color: black;
+}
+
+.botones .editar {
+  background: #E0E0E0;
+  color: black;
+}
+
+.alerta-info label {
+  margin-top: 10px;
+  display: block;
+  color: #FFFFFF;
+}

@@ -1,0 +1,85 @@
+:root {
+  --color-bg: #E0E0E0;            /* fondo gris claro */
+  --color-text: #003B73;          /* texto principal */
+  --color-primary-dark: #003B73;  /* azul oscuro */
+  --color-primary: #00A8E8;       /* azul celeste */
+  --color-accent: #44E0D0;        /* turquesa claro */
+  --color-warning: #FFA500;       /* naranja */
+  --color-danger: #FF4C4C;        /* rojo */
+  --color-info: #00A8E8;          /* azul claro */
+}
+
+body {
+  background-color: var(--color-bg);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.alertas-container {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.alertas-tabla-contenido {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 50px 0px;
+  /* Se eliminan fondo blanco, border-radius y sombra */
+}
+
+.titulo-alerta {
+  font-size: 25px;
+  color: var(--color-primary-dark);
+  margin-bottom: 20px;
+  text-align: left; /* alineación izquierda */
+}
+
+.tabla-alertas {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla-alertas th,
+.tabla-alertas td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  color: var(--color-primary-dark);
+}
+
+.tabla-alertas th {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+}
+
+.alerta-link {
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.alerta-link:hover {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+/* Niveles de gravedad */
+.nivel-crítico {
+  color: var(--color-danger);
+  font-weight: bold;
+}
+
+.nivel-advertencia {
+  color: var(--color-warning);
+  font-weight: bold;
+}
+
+.nivel-información {
+  color: var(--color-info);
+  font-weight: bold;
+}
