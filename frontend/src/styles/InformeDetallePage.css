@@ -51,3 +51,37 @@
 .botones button:hover {
   background: var(--color-btn-hover-bg);
 }
+
+
+
+/* frontend/src/styles/InformeDetallePage.css */
+/* ... (mantenemos los estilos existentes) */
+
+.btn-descargar {
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-descargar:hover {
+  background: var(--color-btn-hover-bg);
+}
+
+.pdf-preview {
+  margin-top: 30px;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.pdf-preview h3 {
+  margin-top: 0;
+  color: var(--color-text);
+}

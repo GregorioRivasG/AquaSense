@@ -171,3 +171,58 @@
   font-weight: bold;
   color: var(--color-gray-light);
 }
+
+
+
+
+/* frontend/src/styles/InformesPage.css */
+/* ... (mantenemos los estilos existentes) */
+
+.item-informe {
+  background: white;
+  color: #003B73;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid var(--color-gray-dark);
+  text-decoration: none;
+  position: relative;
+}
+
+.acciones-informe {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.btn-descargar {
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-descargar:hover {
+  color: var(--color-primary);
+}
+
+.btn-eliminar {
+  color: #ff6b6b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-eliminar:hover {
+  color: #ff5252;
+}
+
+.flecha {
+  color: var(--color-gray-light);
+  font-size: 20px;
+  margin-left: 10px;
+}

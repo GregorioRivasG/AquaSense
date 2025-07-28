@@ -1,7 +1,9 @@
+// frontend/src/pages/InformesPage.tsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/InformesPage.css';
+import { FiDownload, FiTrash2 } from 'react-icons/fi';
 
 interface Informe {
   id: string;
@@ -9,6 +11,10 @@ interface Informe {
   descripcion: string;
   fechaInicio: string;
   fechaFin: string;
+  peceraId: string;
+  peceraNombre: string;
+  createdAt: string;
+  fileUrl?: string;
 }
 
 const InformesPage: React.FC = () => {
@@ -19,13 +25,26 @@ const InformesPage: React.FC = () => {
   const informesPorPagina = 5;
 
   useEffect(() => {
-    const guardados = localStorage.getItem('informes');
-    if (guardados) setInformes(JSON.parse(guardados));
+    // Cargar informes guardados en localStorage
+    const cargarInformes = () => {
+      const guardados = localStorage.getItem('informes');
+      if (guardados) {
+        setInformes(JSON.parse(guardados));
+      }
+    };
+
+    cargarInformes();
   }, []);
+
+  const eliminarInforme = (id: string) => {
+    const nuevosInformes = informes.filter(inf => inf.id !== id);
+    setInformes(nuevosInformes);
+    localStorage.setItem('informes', JSON.stringify(nuevosInformes));
+  };
 
   const informesFiltrados = informes
     .filter((inf) =>
-      `${inf.titulo} ${inf.descripcion} ${inf.fechaInicio} ${inf.fechaFin}`
+      `${inf.titulo} ${inf.descripcion} ${inf.fechaInicio} ${inf.fechaFin} ${inf.peceraNombre}`
         .toLowerCase()
         .includes(busqueda.toLowerCase())
     )
@@ -33,7 +52,7 @@ const InformesPage: React.FC = () => {
       if (orden === 'titulo') {
         return a.titulo.localeCompare(b.titulo);
       } else {
-        return new Date(b.fechaFin).getTime() - new Date(a.fechaFin).getTime();
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
     });
 
@@ -69,15 +88,34 @@ const InformesPage: React.FC = () => {
 
       <div className="lista-informes">
         {paginados.map((inf) => (
-          <Link to={`/informe/${inf.id}`} key={inf.id} className="item-informe">
-            <img src="/pez-alerta.png" alt="icono" />
+          <div key={inf.id} className="item-informe">
+           
             <div>
               <strong>{inf.titulo}</strong>
-              <p>{inf.fechaInicio} - {inf.fechaFin}</p>
-              <span>{inf.descripcion}</span>
+              
+             
             </div>
-            <span className="flecha">›</span>
-          </Link>
+            <div className="acciones-informe">
+              {inf.fileUrl && (
+                <a 
+                  href={inf.fileUrl} 
+                  download 
+                  className="btn-descargar"
+                  title="Descargar PDF"
+                >
+                  <FiDownload size={18} />
+                </a>
+              )}
+              <button
+                onClick={() => eliminarInforme(inf.id)}
+                className="btn-eliminar"
+                title="Eliminar informe"
+              >
+                <FiTrash2 size={18} />
+              </button>
+              <Link to={`/informe/${inf.id}`} className="flecha">›</Link>
+            </div>
+          </div>
         ))}
         {paginados.length === 0 && <p style={{ padding: '20px' }}>No se encontraron informes.</p>}
       </div>

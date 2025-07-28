@@ -11,6 +11,33 @@
   margin: 0 auto;
 }
 
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-generar-reporte {
+  background: #00A8E8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-generar-reporte:hover {
+  background: #0077B6;
+}
+
 .ubicacion {
   color: #666;
   font-size: 1.1rem;
@@ -147,6 +174,41 @@ tr:hover {
   font-weight: bold;
 }
 
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Estilos específicos para el PDF */
+.report-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.report-content .chart-container {
+  height: 250px;
+}
+
+.report-content table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.report-content h1, 
+.report-content h2, 
+.report-content h3 {
+  color: #003B73;
+}
+
 @media (max-width: 768px) {
   .current-readings {
     grid-template-columns: 1fr;
@@ -154,5 +216,10 @@ tr:hover {
   
   .reading-value {
     font-size: 1.8rem;
+  }
+
+  .report-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

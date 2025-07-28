@@ -63,7 +63,9 @@ const EditarUsuarioForm: React.FC<EditarUsuarioFormProps> = ({
   };
 
   return (
+    
     <div className="editar-usuario-form">
+      <div><br /><br /><br /><br /></div>
       <h2>Editar Perfil</h2>
       
       {error && <div className="error-message">{error}</div>}

@@ -32,12 +32,14 @@ const PerfilDetallePage: React.FC = () => {
   return (
     <div className="perfil-detalle-container">
       <Navbar />
+      
       <div className="perfil-detalle-box">
         {perfil.fotoUrl ? (
           <img src={perfil.fotoUrl} alt="perfil" className="perfil-img" />
         ) : (
           <div className="perfil-icono">👤</div>
         )}
+        <div><br /><br /><br /><br /></div>
         <h2>{perfil.nombre}</h2>
         <p><strong>Correo:</strong> {perfil.correo}</p>
         <p><strong>Contraseña:</strong> ******</p>

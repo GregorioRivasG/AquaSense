@@ -1,3 +1,4 @@
+// frontend/src/pages/InformeDetallePage.tsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -9,9 +10,9 @@ interface Informe {
   descripcion: string;
   fechaInicio: string;
   fechaFin: string;
-  ph: string;
-  temperatura: string;
-  oxigeno: string;
+  peceraId: string;
+  peceraNombre: string;
+  fileUrl?: string;
 }
 
 const InformeDetallePage: React.FC = () => {
@@ -24,33 +25,47 @@ const InformeDetallePage: React.FC = () => {
     setInforme(encontrado);
   }, [id]);
 
-  if (!informe) return <div>Cargando informe...</div>;
+  if (!informe) return <div className="detalle-informe-container"><Navbar /><p style={{ padding: 20 }}>Cargando informe...</p></div>;
 
   return (
     <div className="detalle-informe-container">
       <Navbar />
       <div className="detalle-box">
-        <img src="/pez-alerta.png" alt="pez" />
+        <img src="/pez-alerta.png" alt="" />
         <h2>{informe.titulo}</h2>
-        <p>{informe.fechaInicio} - {informe.fechaFin}</p>
+        <p>{informe.peceraNombre} • {informe.fechaInicio} - {informe.fechaFin}</p>
 
         <div className="botones">
-          <button>Editar informe</button>
-          <button>Compartir informe</button>
-          <button>Descargar</button>
+          {informe.fileUrl && (
+            <a 
+              href={informe.fileUrl} 
+              download 
+              className="btn-descargar"
+            >
+              Descargar PDF
+            </a>
+          )}
         </div>
 
         <h3>Rango de fechas</h3>
         <p><strong>Fecha de inicio:</strong> {informe.fechaInicio}</p>
         <p><strong>Fecha de finalización:</strong> {informe.fechaFin}</p>
 
-        <h3>Métricas de la calidad del agua</h3>
-        <p><strong>Oxígeno disuelto:</strong> {informe.oxigeno}</p>
-        <p><strong>Nivel de pH:</strong> {informe.ph}</p>
-        <p><strong>Temperatura:</strong> {informe.temperatura}</p>
-
         <h3>Resumen del informe</h3>
         <p>{informe.descripcion}</p>
+
+        {informe.fileUrl && (
+          <div className="pdf-preview">
+            <h3>Vista previa del informe</h3>
+            <iframe 
+              src={informe.fileUrl} 
+              title="Vista previa del PDF"
+              width="100%" 
+              height="500px"
+              style={{ border: 'none' }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

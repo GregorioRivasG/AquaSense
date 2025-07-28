@@ -71,7 +71,7 @@ const DashboardPage: React.FC = () => {
           <tbody>
             {tanks.map((tank) => (
               <tr key={tank._id}>
-                <td><Link to={`/pecera/${tank._id}`}>{tank.name || 'Sin nombre'}</Link></td>
+                <td><Link to={`/pecera/${tank._id}`}>{tank.name || 'Nueva Pecera'}</Link></td>
                 <td><FiMapPin style={{ marginRight: '6px' }} />{tank.ubicacion || 'N/A'}</td>
                 <td><FiZap style={{ marginRight: '6px' }} />{tank.conductividad || 'N/A'}</td>
                 <td><GiChemicalDrop style={{ marginRight: '6px', color: '#0077cc' }} />{tank.ph || 'N/A'}</td>

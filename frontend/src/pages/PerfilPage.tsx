@@ -113,8 +113,8 @@ const PerfilPage: React.FC = () => {
         ) : (
           <>
           <br />
+            <div><br /><br /></div>
             <div className="perfil-header">
-                
               <h1>Mi Perfil</h1>
               <button 
                 onClick={() => setIsEditing(true)}
@@ -123,7 +123,7 @@ const PerfilPage: React.FC = () => {
                 Editar Perfil
               </button>
             </div>
-
+           
             <div className="perfil-info">
               {usuario?.fotoUrl && (
                 <div className="perfil-foto">
